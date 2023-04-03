@@ -12,10 +12,8 @@ public class Loan {
     @Column(name = "loan_id")
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id")
+    private String userEmail;
 
-    private User user;
     @ManyToOne
     @JoinColumn(name = "book_id")
     private Book book;
@@ -29,26 +27,44 @@ public class Loan {
     @Column(name = "return_date" )
     private Date returnDate;
 
-    public Loan(User user, Date loanDate, Date dateToReturn) {
-        this.user = user;
+    public Loan(Book book, String userEmail, Date loanDate, Date dateToReturn) {
+        this.book = book;
+        this.userEmail = userEmail;
         this.loanDate = loanDate;
         this.dateToReturn = dateToReturn;
     }
 
-    public User getUser() {
-        return user;
+    public String getUserEmail() {
+        return userEmail;
     }
 
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
+    }
+
+    public Book getBook() {
+        return book;
+    }
+
+    public void setBook(Book book) {
+        this.book = book;
+    }
 
     public Date getLoanDate() {
         return loanDate;
     }
 
+    public void setLoanDate(Date loanDate) {
+        this.loanDate = loanDate;
+    }
 
     public Date getDateToReturn() {
         return dateToReturn;
     }
 
+    public void setDateToReturn(Date dateToReturn) {
+        this.dateToReturn = dateToReturn;
+    }
 
     public Date getReturnDate() {
         return returnDate;
