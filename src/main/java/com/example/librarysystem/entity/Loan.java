@@ -14,7 +14,12 @@ public class Loan {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
+
     private User user;
+    @ManyToOne
+    @JoinColumn(name = "book_id")
+    private Book book;
+
     @Column(name = "loan_date", nullable = false )
     private Date loanDate;
 
