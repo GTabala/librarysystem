@@ -7,6 +7,10 @@ import java.util.List;
 public class LoanServiceImpl implements LoanService {
 
     @Override
+    public List<Loan> listLoans(){
+        return null;
+    };
+    @Override
     public List<Loan> listOverdueLoans(){
         return null;
     };
