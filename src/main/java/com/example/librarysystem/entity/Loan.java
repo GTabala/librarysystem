@@ -2,7 +2,7 @@ package com.example.librarysystem.entity;
 
 import jakarta.persistence.*;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "LOANS")
@@ -19,58 +19,68 @@ public class Loan {
     private Book book;
 
     @Column(name = "loan_date", nullable = false )
-    private Date loanDate;
+    private LocalDate loanDate;
 
     @Column(name = "date_to_return", nullable = false )
-    private Date dateToReturn;
+    private LocalDate dateToReturn;
 
     @Column(name = "return_date" )
-    private Date returnDate;
+    private LocalDate returnDate;
 
-    public Loan(Book book, String userEmail, Date loanDate, Date dateToReturn) {
+    private boolean active;
+    private boolean overdue;
+
+    public Loan(Book book, String userEmail, long weeks) {
         this.book = book;
         this.userEmail = userEmail;
-        this.loanDate = loanDate;
-        this.dateToReturn = dateToReturn;
+        this.loanDate = LocalDate.now();
+        this.dateToReturn = LocalDate.now().plusWeeks(weeks);
+        this.active = true;
+        this.overdue = false;
+    }
+
+    public Long getId() {
+        return id;
     }
 
     public String getUserEmail() {
         return userEmail;
     }
 
-    public void setUserEmail(String userEmail) {
-        this.userEmail = userEmail;
-    }
-
     public Book getBook() {
         return book;
     }
 
-    public void setBook(Book book) {
-        this.book = book;
-    }
-
-    public Date getLoanDate() {
+    public LocalDate getLoanDate() {
         return loanDate;
     }
 
-    public void setLoanDate(Date loanDate) {
-        this.loanDate = loanDate;
-    }
-
-    public Date getDateToReturn() {
+    public LocalDate getDateToReturn() {
         return dateToReturn;
     }
 
-    public void setDateToReturn(Date dateToReturn) {
-        this.dateToReturn = dateToReturn;
-    }
-
-    public Date getReturnDate() {
+    public LocalDate getReturnDate() {
         return returnDate;
     }
 
-    public void setReturnDate(Date returnDate) {
+    public boolean isActive() {
+        return active;
+    }
+
+    public boolean isOverdue() {
+        return overdue;
+    }
+
+    public void setReturnDate(LocalDate returnDate) {
         this.returnDate = returnDate;
     }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+
+    public void setOverdue(boolean overdue) {
+        this.overdue = overdue;
+    }
 }
+
