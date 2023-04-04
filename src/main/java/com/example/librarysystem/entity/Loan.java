@@ -1,6 +1,6 @@
 package com.example.librarysystem.entity;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 import java.time.LocalDate;
 
@@ -12,6 +12,7 @@ public class Loan {
     @Column(name = "loan_id")
     private Long id;
 
+    @Column(name = "user_email")
     private String userEmail;
 
     @ManyToOne

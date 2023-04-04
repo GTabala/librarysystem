@@ -1,6 +1,7 @@
 package com.example.librarysystem.entity;
 
-import jakarta.persistence.*;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name = "BOOKS")
