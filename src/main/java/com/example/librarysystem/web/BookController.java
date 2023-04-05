@@ -15,7 +15,7 @@ public class BookController {
     private BookService bookService;
 
     @Autowired
-    public void setCourierService(BookService bookService) {
+    public void setBookService(BookService bookService) {
         this.bookService = bookService;
     }
 
