@@ -18,5 +18,19 @@ public class BookServiceImpl implements BookService {
     public Book deleteBook(Long id){
         return null;
     };
+    @Override
+    public List<Book> getBookByTitle(String title){
+        return null;
+    }
+
+    @Override
+    public List<Book> getBookByAuthor(String author) {
+        return null;
+    }
+
+    @Override
+    public List<Book> getBookByIsbn(String isbn) {
+        return null;
+    }
 
 }

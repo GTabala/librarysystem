@@ -10,4 +10,10 @@ public interface BookService {
     Book addNewBook(Book book);
 
     Book deleteBook(Long id);
+
+    List<Book> getBookByTitle(String title);
+
+    List<Book> getBookByAuthor(String author);
+
+    List<Book> getBookByIsbn(String isbn);
 }
