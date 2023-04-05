@@ -1,6 +1,6 @@
-package com.example.librarysystem.repository;
+package com.example.librarysystem.repositories;
 
-import com.example.librarysystem.entity.Loan;
+import com.example.librarysystem.entities.Loan;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

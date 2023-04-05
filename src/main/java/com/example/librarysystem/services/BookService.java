@@ -1,6 +1,6 @@
-package com.example.librarysystem.service;
+package com.example.librarysystem.services;
 
-import com.example.librarysystem.entity.Book;
+import com.example.librarysystem.entities.Book;
 
 import java.util.List;
 

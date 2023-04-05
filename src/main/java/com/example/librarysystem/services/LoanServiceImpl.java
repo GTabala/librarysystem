@@ -1,6 +1,6 @@
-package com.example.librarysystem.service;
+package com.example.librarysystem.services;
 
-import com.example.librarysystem.entity.Loan;
+import com.example.librarysystem.entities.Loan;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
